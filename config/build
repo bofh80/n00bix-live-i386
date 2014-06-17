@@ -1,0 +1,10 @@
+[Image]
+Architecture: i386
+Archive-Areas: main contrib non-free
+Distribution: jessie
+Mirror-Bootstrap: http://192.168.1.1:3142/ftp.uk.debian.org/debian/
+
+[FIXME]
+Configuration-Version: 4.0~alpha36
+Name: live-image
+Type: iso-hybrid

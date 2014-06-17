@@ -1,0 +1,14 @@
+#!/bin/sh
+
+set -e
+
+lb config noauto \
+      --architectures i386 \
+      --linux-flavours 686-pae \
+      --distribution jessie \
+      --mirror-bootstrap http://192.168.1.1:3142/ftp.uk.debian.org/debian/ \
+      --mirror-binary http://http.debian.net/debian \
+      --archive-areas "main contrib non-free" \
+      --apt-indices false \
+      --bootappend-live "boot=live components quiet splash vga=current" \
+	"${@}"
