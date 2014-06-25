@@ -37,15 +37,15 @@ apt-get autoremove --yes || true
 echo download skype
 wget -nv -O /tmp/skype.deb http://www.skype.com/go/getskype-linux-deb
 echo download steam
-wget -nv -O /tmp/steam-launcher.deb http://192.168.1.7:3142/repo.steampowered.com/steam/pool/steam/s/steam/steam-launcher_1.0.0.48_all.deb
+wget -nv -O /tmp/steam-launcher.deb http://repo.steampowered.com/steam/pool/steam/s/steam/steam-launcher_1.0.0.48_all.deb
 echo download adobe
-wget -nv -O /tmp/AdbeRdr9.5.5-1_i386linux_enu.deb http://192.168.1.1:3142/ftp.adobe.com/pub/adobe/reader/unix/9.x/9.5.5/enu/AdbeRdr9.5.5-1_i386linux_enu.deb
+wget -nv -O /tmp/AdbeRdr9.5.5-1_i386linux_enu.deb http://ftp.adobe.com/pub/adobe/reader/unix/9.x/9.5.5/enu/AdbeRdr9.5.5-1_i386linux_enu.deb
 echo download chrome
 wget -nv -O /tmp/google-chrome-stable_current_i386.deb https://dl.google.com/linux/direct/google-chrome-stable_current_i386.deb
 echo download libssl098
-wget -nv -O /tmp/libssl098_i386.deb http://192.168.1.1:3142/snapshot.debian.org/archive/debian/20110406T213352Z/pool/main/o/openssl098/libssl0.9.8_0.9.8o-7_i386.deb
+wget -nv -O /tmp/libssl098_i386.deb http://snapshot.debian.org/archive/debian/20110406T213352Z/pool/main/o/openssl098/libssl0.9.8_0.9.8o-7_i386.deb
 echo download spotify
-wget -nv -O /tmp/spotify-client_i386.deb http://192.168.1.1:3142/repository.spotify.com/pool/non-free/s/spotify/spotify-client_0.9.4.183.g644e24e.428-1_i386.deb
+wget -nv -O /tmp/spotify-client_i386.deb http://repository.spotify.com/pool/non-free/s/spotify/spotify-client_0.9.4.183.g644e24e.428-1_i386.deb
 echo download google-earth
 wget -nv -O /tmp/google-earth_i386.deb https://dl.google.com/dl/earth/client/current/google-earth-stable_current_i386.deb
 
