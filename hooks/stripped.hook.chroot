@@ -27,11 +27,58 @@ set -e
 #		echo "WARNING: ${PACKAGE} isn't installed"
 #	fi
 #done
-
-apt-get autoremove --yes || true
+#do some apt stuff
 apt-get remove --purge --yes rsyslog cron exim4-config avahi-daemon libavahi-core7 libdaemon0 nfs-common libnfsidmap2
 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 94558F59
 apt-get -ym --no-install-recommends install network-manager-gnome nautilus-data
+apt-get -ym install file-roller
+apt-get autoremove --yes || true
+#download packages
+echo download skype
+wget -nv -O /tmp/skype.deb http://www.skype.com/go/getskype-linux-deb
+echo download steam
+wget -nv -O /tmp/steam-launcher.deb http://192.168.1.7:3142/repo.steampowered.com/steam/pool/steam/s/steam/steam-launcher_1.0.0.48_all.deb
+echo download adobe
+wget -nv -O /tmp/AdbeRdr9.5.5-1_i386linux_enu.deb http://192.168.1.1:3142/ftp.adobe.com/pub/adobe/reader/unix/9.x/9.5.5/enu/AdbeRdr9.5.5-1_i386linux_enu.deb
+echo download chrome
+wget -nv -O /tmp/google-chrome-stable_current_i386.deb https://dl.google.com/linux/direct/google-chrome-stable_current_i386.deb
+echo download libssl098
+wget -nv -O /tmp/libssl098_i386.deb http://192.168.1.1:3142/snapshot.debian.org/archive/debian/20110406T213352Z/pool/main/o/openssl098/libssl0.9.8_0.9.8o-7_i386.deb
+echo download spotify
+wget -nv -O /tmp/spotify-client_i386.deb http://192.168.1.1:3142/repository.spotify.com/pool/non-free/s/spotify/spotify-client_0.9.4.183.g644e24e.428-1_i386.deb
+echo download google-earth
+wget -nv -O /tmp/google-earth_i386.deb https://dl.google.com/dl/earth/client/current/google-earth-stable_current_i386.deb
+
+#install packages
+echo install skype
+gdebi -n -q /tmp/skype.deb
+echo install steam
+sh -c 'echo y | gdebi -n -q /tmp/steam-launcher.deb'
+echo install adobe
+gdebi -n -q /tmp/AdbeRdr9.5.5-1_i386linux_enu.deb
+echo install chrome
+gdebi -n -q /tmp/google-chrome-stable_current_i386.deb
+echo install libssl098
+gdebi -n -q /tmp/libssl098_i386.deb
+echo install spotify
+gdebi -n -q /tmp/spotify-client_i386.deb
+echo install google-earth
+gdebi -n -q /tmp/google-earth_i386.deb
+
+#remove deb files
+rm /tmp/skype.deb
+rm /tmp/steam-launcher.deb
+rm /tmp/AdbeRdr9.5.5-1_i386linux_enu.deb
+rm /tmp/google-chrome-stable_current_i386.deb
+rm /tmp/libssl098_i386.deb
+rm /tmp/spotify-client_i386.deb
+rm /tmp/google-earth_i386.deb
+
+
+
+
+
+
 #echo cron hold | dpkg --set-selections
 #echo anacron hold | dpkg --set-selections
 

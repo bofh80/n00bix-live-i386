@@ -6,9 +6,15 @@ lb config noauto \
       --architectures i386 \
       --linux-flavours 686-pae \
       --distribution jessie \
-      --mirror-bootstrap http://http.debian.org/debian \
+      --mirror-bootstrap http://192.168.1.1:3142/ftp.uk.debian.org/debian/ \
       --mirror-binary http://http.debian.net/debian \
       --archive-areas "main contrib non-free" \
       --apt-indices false \
       --bootappend-live "boot=live components quiet splash vga=current" \
+      --iso-application n00bix-i386-v2 \
+      --iso-preparer bofh80 \
+      --iso-publisher n00bix.outworlds.de \
+      --iso-volume n00bix-32-v2 \
+      --debian-installer-distribution daily \
+      --debian-installer live \
 	"${@}"
